@@ -1,0 +1,80 @@
+/*   A doc is a collection of functions, applications, and execution
+ * requests. */
+document :
+  named_functions_and_applications_and_execution_requests
+;
+named_functions_and_applications_and_execution_requests :
+  named_function named_functions_and_applications_and_execution_requests
+| application named_functions_and_applications_and_execution_requests
+| execution_request named_functions_and_applications_and_execution_requests
+|
+;
+application :
+  cli_application
+;
+cli_application :
+  APPLICATION IDENTIFIER IS A COMMAND LINE INTERFACE
+  APPLICATION AND THE ENTRY POINT IS FUNCTION IDENTIFIER END
+  APPLICATION IDENTIFIER
+;
+named_function :
+  cli_named_function
+;
+cli_named_function :
+  FUNCTION IDENTIFIER IS A COMMAND LINE INTERFACE
+  APPLICATION FUNCTION AND function_receives_clause AND
+  function_returns_clause function_side_effects_clause AND DOES
+  function_statements function_where_clauses END FUNCTION IDENTIFIER
+;
+function_receives_clause :
+  RECEIVES function_receives_clause_inner
+;
+function_receives_clause_inner :
+  NOTHING AT ALL
+;
+function_returns_clause :
+  RETURNS function_returns_clause_inner
+;
+function_returns_clause_inner :
+  NOTHING AT ALL
+;
+function_side_effects_clause :
+  SO IT CAUSES SIDE EFFECTS
+;
+function_where_clauses :
+  WHERE function_where_clause function_where_clauses
+|
+;
+function_where_clause :
+  IDENTIFIER IS SET TO expression
+;
+execution_request :
+  RUN COMMAND LINE INTERFACE APPLICATION IDENTIFIER
+;
+function_statements :
+  function_statement AND THEN function_statements
+| function_statement
+;
+function_statement :
+  PRINT expression
+| NEW LINE
+| READ NATURAL IDENTIFIER
+;
+expression :
+  IF condition THEN expression ELSE expression END IF
+| STRING_LITERAL
+| TYPE OF expression
+| IDENTIFIER
+| LEFT_PARENS expression RIGHT_PARENS
+| expression TIMES expression
+| expression DIVIDED BY expression
+| expression MINUS expression
+| DICE_EXPRESSION
+| NATURAL_LITERAL
+| INTEGER_LITERAL
+| RATIONAL_LITERAL
+;
+condition :
+  expression IS LESS THAN expression
+| expression IS GREATER THAN expression
+;
