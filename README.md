@@ -43,7 +43,7 @@ TODO
 
 * Arithmetic expressions. Evaluation theoretically separable from execution.
 
-* The `N` (natural), `Z` (integer) and `Q` (rational) sets. Basic arithmetic on
+* The `N` (natural, &#8469;&#2115;&#8484;&#2124;&#8474;&#211A;), `Z` (integer) and `Q` (rational) sets. Basic arithmetic on
   them: addition, substraction, multiplication, division.
 
 * Non computational operations.
