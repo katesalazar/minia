@@ -11,15 +11,15 @@ Minia programming language spec WIP.
 
 * [resources][2]
 
-  * [scanner][5]
-
-    * [scanner (Lex format)][6]
-
   * [grammar][3]
 
     * [grammar (BNF)][12]
 
     * [grammar (Yacc format)][4]
+
+  * [scanner][5]
+
+    * [scanner (Lex format)][6]
 
   * [implementations][7]
 
@@ -43,10 +43,11 @@ TODO
 
 * Arithmetic expressions. Evaluation theoretically separable from execution.
 
-* The `N` (natural, &#8469;&#2115;&#8484;&#2124;&#8474;&#211A;), `Z` (integer) and `Q` (rational) sets. Basic arithmetic on
-  them: addition, substraction, multiplication, division.
+* The natural or &#8469 (`N`), integer or &#8484; (`Z`) and rational or &#8474;
+  (`Q`) sets. Basic arithmetic on them: addition, substraction, multiplication,
+  division, exponentiation.
 
-* Non computational operations.
+* "Non computational" _operations_, mainly for causing side effects.
 
 * Command line applications.
 
@@ -55,6 +56,36 @@ TODO
 
 
 ## resources
+
+### grammar
+
+#### grammar (BNF)
+
+```
+
+&lt;greater&gt; ::= "greater"
+
+&lt;is&gt; ::= "is"
+
+&lt;less&gt; ::= "less"
+
+&lt;than&gt; ::= "than"
+
+&lt;expression&gt; ::= &lt;integer_literal&gt;
+                     | &lt;rational_literal&gt;
+
+&lt;condition&gt; ::= &lt;expression&gt; &lt;is&gt; &lt;less&gt; &lt;than&gt; &lt;expression&gt;
+                    | &lt;expression&gt; &lt;is&gt; &lt;greater&gt; &lt;than&gt; &lt;expression&gt;
+
+```
+
+TODO
+
+
+#### grammar (Yacc format)
+
+[WIP][11]
+
 
 ### scanner
 
@@ -66,38 +97,14 @@ TODO
 TODO
 
 
-### grammar
-
-&lt;greater&gt; ::= "greater"
-
-&lt;is&gt; ::= "is"
-
-&lt;less&gt; ::= "less"
-
-&lt;than&gt; ::= "than"
-
-&lt;expression&gt; ::= ..........
-                     | &lt;rational_literal&gt;
-
-&lt;condition&gt; ::= &lt;expression&gt; &lt;is&gt; &lt;less&gt; &lt;than&gt; &lt;expression&gt;
-                    | &lt;expression&gt; &lt;is&gt; &lt;greater&gt; &lt;than&gt; &lt;expression&gt;
-
-TODO
-
-
-#### grammar (Yacc format)
-
-[WIP][11]
-
-
 ### implementations
 
-The [amara project][10]
+The [amara project][10] (early WIP).
 
 
 ## acknowledgements
 
-TODO
+&lt;Insert acknowledgements here&gt;O
 
 
 ## copying
