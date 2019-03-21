@@ -76,7 +76,8 @@ TODO
 
 &lt;than&gt; ::= "than"
 
-&lt;expression&gt; ::= ......... (TODO)
+&lt;expression&gt; ::= ..........
+                     | &lt;rational_literal&gt;
 
 &lt;condition&gt; ::= &lt;expression&gt; &lt;is&gt; &lt;less&gt; &lt;than&gt; &lt;expression&gt;
                     | &lt;expression&gt; &lt;is&gt; &lt;greater&gt; &lt;than&gt; &lt;expression&gt;
