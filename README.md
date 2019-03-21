@@ -68,6 +68,16 @@ TODO
 
 ### grammar
 
+&lt;greater&gt; ::= "greater"
+
+&lt;is&gt; ::= "is"
+
+&lt;less&gt; ::= "less"
+
+&lt;than&gt; ::= "than"
+
+&lt;expression&gt; ::= ......... (TODO)
+
 &lt;condition&gt; ::= &lt;expression&gt; &lt;is&gt; &lt;less&gt; &lt;than&gt; &lt;expression&gt;
                     | &lt;expression&gt; &lt;is&gt; &lt;greater&gt; &lt;than&gt; &lt;expression&gt;
 
