@@ -201,6 +201,10 @@ TODO
 
 ### grammar (BNF)
 
+`<TAB>` represents a horizontal tabulation, `<EOL>` represents the end of the
+line (carriage return and / or line feed), `<NOTHING>` represents nothing, or
+the ambsence of any character, or the empty string.
+
 This is WIP.
 
 ```
@@ -248,7 +252,7 @@ This is WIP.
 <named_functions_and_applications_and_execution_requests> ::= <named_function>    <named_functions_and_applications_and_execution_requests>
                                                             | <application_nt>    <named_functions_and_applications_and_execution_requests>
                                                             | <execution_request> <named_functions_and_applications_and_execution_requests>
-                                                            |
+                                                            | <NOTHING>
 
 <application_nt> ::= <cli_application>
 
