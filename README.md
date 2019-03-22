@@ -11,7 +11,35 @@ Minia programming language spec WIP.
 
 * [reference][5]
 
-  * [...]
+  * [introduction][...]
+
+  * [lexical conventions][...]
+
+    * [tokens][...]
+
+    * [comments][...]
+
+    * [identifiers][...]
+
+    * [literals][...]
+
+      * [string literals][...]
+
+      * [number literals][...]
+
+        * [natural literals][...]
+
+        * [rational literals][...]
+
+  * [syntax notation][...]
+
+  * [meaning of identifiers][...]
+
+  * [syntax notation][...]
+
+  * [syntax notation][...]
+
+  * [syntax notation][...]
 
   * [grammar][3]
 
