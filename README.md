@@ -239,7 +239,7 @@ This is WIP.
 
 <identifier> ::= <letter> <identifier_inner>
 
-<ws> ::= " " | 
+<ws> ::= " " | <TAB> | <EOL>
 
 ...
 
