@@ -75,11 +75,22 @@ Some key features of the language:
 
 * _High readability_ syntax.
 
+* Unopinionated string concatenation. Does not impose any string concatenation
+  operator on you. Encourages to use text syntax for string concatenation and
+  lets you define an alias using an infix operator of your choice.
+
 * Arithmetic expressions. Evaluation theoretically separable from execution.
 
 * The natural or &#8469; (`N`), integer or &#8484; (`Z`) and rational or
   &#8474; (`Q`) sets. Basic arithmetic on them: addition, substraction,
   multiplication, division, exponentiation.
+
+  * Absence of machine integers and floating point numbers. The interpreter is
+    to choose the underlying technique for resolving rational numbers, using
+    floating or fixed point arithmetic, at will.
+
+    * The programmer might configure a scope in order to ban floating point
+      arithmetic in it.
 
 * "Non computational" _operations_, mainly for causing side effects.
 
