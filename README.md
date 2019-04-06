@@ -114,6 +114,8 @@ TODO
 
 TODO
 
+Non-ASCII characters are not allowed in programs written in minia language.
+
 
 #### tokens
 
