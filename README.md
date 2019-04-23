@@ -116,6 +116,10 @@ TODO
 
 Non-ASCII characters are not allowed in programs written in minia language.
 
+As a general rule, ASCII punctuation is not used in programs written in minia language, but they should be allowed and treated with no meaning, like (generally) whitespace.
+
+TODO maybe, probably, forbid ASCII punctuation.
+
 
 #### tokens
 
