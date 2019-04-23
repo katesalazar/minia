@@ -76,8 +76,10 @@ Some key features of the language:
 * _High readability_ syntax.
 
 * Unopinionated string concatenation. Does not impose any string concatenation
-  operator on you. Encourages to use text syntax for string concatenation and
-  lets you define an alias using an infix operator of your choice.
+  operator on you. ~~Encourages to use text syntax for string concatenation and
+  lets you define an alias using an infix operator of your choice.~~ Provides
+  only a verbose `concatenation` operator and considers glyphs as presentation
+  accident.
 
 * Arithmetic expressions. Evaluation theoretically separable from execution.
 
@@ -112,27 +114,40 @@ TODO
 
 ### lexical conventions
 
-A program consists of exactly one document, consisting of source code. It is translated in several phases, which are described in FIXME BROKEN REFERENCE.
+A program consists of exactly one document, consisting of source code.
+It is translated in several phases, which are described in FIXME BROKEN REFERENCE.
 
 TODO
 
 Non-ASCII characters are not allowed in programs written in minia language.
 
-As a general rule, ASCII punctuation is not used in programs written in minia language, but they should be allowed and treated with no meaning, like (generally) whitespace.
+As a general rule, ASCII punctuation is not used in programs written in minia
+language, but they should be allowed and treated with no meaning, like
+(generally) whitespace.
 
 TODO maybe, probably, forbid ASCII punctuation.
 
 
 #### tokens
 
-There are four classes of tokens: identifiers, keywords, literals, and other separators. Blanks, horizontal and vertical tabs, newlines, formfeeds and comments as described below (collectively, \`\`white space") are _mostly_ ignored except as they separate tokens. Some white space might be required to separate otherwise adjacent identifiers, keywords, and literals. Some white space might have some degree of meaning, like the white space (excluding comments) in between the words (keywords?) `comment` and `ends` which together are used to close comments.
+There are four classes of tokens: identifiers, keywords, literals, and other
+separators. Blanks, horizontal and vertical tabs, newlines, formfeeds and
+comments as described below (collectively, \`\`white space") are _mostly_
+ignored except as they separate tokens. Some white space might be required to
+separate otherwise adjacent identifiers, keywords, and literals. Some white
+space might have some degree of meaning, like the white space (excluding
+comments) in between the words (keywords?) `comment` and `ends` which together
+are used to close comments.
 
 TODO
 
 
 #### comments
 
-The word (keyword?) `comment` introduce a comment, which terminates with the words (keywords?) `comment ends` (with any amount of white space (excluding comments themselves) in between `comment` and `ends`. Comments do **not** nest, and they do not occur within a string literal.
+The word (keyword?) `comment` introduces a comment, which terminates with the
+words (keywords?) `comment ends` (with any amount of white space (excluding
+comments themselves) in between `comment` and `ends`. Comments do **not** nest,
+and they do not occur within a string literal.
 
 
 #### identifiers
@@ -165,17 +180,29 @@ Number literals are of two types:
 
 * natural number literals (MISSING LINK TO)
 
-* rational number literals )MISING LINK TO) which are only positive rational number literals
+* rational number literals )MISING LINK TO) which are only positive rational
+  number literals
 
   * excluding zero, which can be represented as a natural number literal
 
-  * including any other natural number that can, of course, also be represented using natural number literals.
+  * including any other natural number that can, of course, also be represented
+    using natural number literals.
 
-You might be missing the integer set. But integers can be constructed as expressions consisting of the unary operator minus followed by a natural number literal. Like wise, a negative rational number can be constructed as an expression consisting of the unary operator minus followed by a \[positive\] rational number literal.
+You might be missing the integer set. But integers can be constructed as
+expressions consisting of the unary operator minus followed by a natural number
+literal. Like wise, a negative rational number can be constructed as an
+expression consisting of the unary operator minus followed by a \[positive\]
+rational number literal.
 
-In general there are no hard wired bounds in the language. But of course bounds will be imposed on you by the resource availability of the machine running the program.
-There will also be hard wired bounds; even the language does not hard wire bounds, it will demand you to impose hard wire bounds on the scopes of your program where arithmetic operations are happening, you will use the `width` and `precision` keywords for that.
-The `width` keyword acts on natural, integer, and rational numbers. The `precision` keyword acts on rational numbers.
+In general there are no hard wired bounds in the language. But of course bounds
+will be imposed on you by the resource availability of the machine running the
+program.
+There will also be hard wired bounds; even the language does not hard wire
+bounds, it will demand you to impose hard wire bounds on the scopes of your
+program where arithmetic operations are happening, you will use the `width` and
+`precision` keywords for that.
+The `width` keyword acts on natural, integer, and rational numbers. The
+`precision` keyword acts on rational numbers.
 
 
 ###### natural literals
@@ -188,16 +215,23 @@ A natural literal consists of either:
 
 1. A zero digit (0).
 
-2. A non zero digit (1-9) followed by **any** number of digits without restriction.
+2. A non zero digit (1-9) followed by **any** number of digits without
+   restriction.
 
-A natural number is not necessarily semantically correct even lexically could be correct. If a `420` is required at any time when the `arithmetic width` of the scope is set to `1`, an error is required to happen.
+A natural number is not necessarily semantically correct even lexically could
+be correct. If a `420` is required at any time when the `arithmetic width` of
+the scope is set to `1`, an error is required to happen.
 
 FIXME talk about the `width` keyword.
 
 
 ###### integers
 
-An integer is represented by an expression (MISSING LINK TO EXPRESSIONS) consisting of the occurrence of a natural literal following the unary operator minus. For reasons of strictly elegance, zero should be preferrably used without the minus sign, as minus zero has to be automatically transformed in the natural zero.
+An integer is represented by an expression (MISSING LINK TO EXPRESSIONS)
+consisting of the occurrence of a natural literal following the unary operator
+minus. For reasons of strictly elegance, zero should be preferrably used
+without the minus sign, as minus zero has to be automatically transformed in
+the natural zero.
 
 
 ###### rational literals
@@ -206,28 +240,50 @@ A rational literal is decimal (i.e. base-ten).
 
 The primitive type, if any, of a rational literal; is implementation detail.
 
-A positive rational literal consists of an optional natural part, followed by a mandatory dot, followed by a decimal part which can not be a list of zeroed digits, followed by an optional part where an `e` or `E` is mandatory and then a minus sign is optional and lastly a natural exponent is required.
+A positive rational literal consists of an optional natural part, followed by a
+mandatory dot, followed by a decimal part which can not be a list of zeroed
+digits, followed by an optional part where an `e` or `E` is mandatory and then
+a minus sign is optional and lastly a natural exponent is required.
 
-The natural part, if any, consists of a zero (0) or a non zero digit (1-9) followed by any number of digits without restriction. The decimal part consists of any number of zeroed digits, followed by a non zero digit (1-9), followed by any number of digits without restriction. The exponent consists of a zero (0) or a non zero digit (1-9) followed by any number of digits without restriction.
+The natural part, if any, consists of a zero (0) or a non zero digit (1-9)
+followed by any number of digits without restriction. The decimal part consists
+of any number of zeroed digits, followed by a non zero digit (1-9), followed by
+any number of digits without restriction. The exponent consists of a zero (0)
+or a non zero digit (1-9) followed by any number of digits without restriction.
 
-As written before, the natural part is optional. The decimal part is mandatory. The exponent is optional. The dot, separating the optional natural part (if any) from the mandatory decimal part, is mandatory. The `e` or `E`, separating the mandatory decimal part from the optional exponent part, is optional.
+As written before, the natural part is optional. The decimal part is mandatory.
+The exponent is optional. The dot, separating the optional natural part (if
+any) from the mandatory decimal part, is mandatory. The `e` or `E`, separating
+the mandatory decimal part from the optional exponent part, is optional.
 
-As a consequence, there is no way to represent zero as a rational literal. That's alright, because zero is natural, and in the Minia language every natural number can be promoted to a positive rational number. Any other natural numbers can be expressed as a rational literal, e.g. `420` can be also expressed as `.420e3` or `.420E3`. The interpreter program,
+As a consequence, there is no way to represent zero as a rational literal.
+That's alright, because zero is natural, and in the Minia language every
+natural number can be promoted to a positive rational number. Any other natural
+numbers can be expressed as a rational literal, e.g. `420` can be also
+expressed as `.420e3` or `.420E3`. The interpreter program,
 or, in some conditions, maybe the compiler,
-or, if applicable, the compiled program, should detect this and automatically transform such rational number into a natural number, `420`. You can consider such transformation as a particular case of a general principle in computing by which functions should take as broadest input as possible and return as thinnest output as possible. Like wise, such rational literals as `1234.567e0` or
+or, if applicable, the compiled program, should detect this and automatically
+transform such rational number into a natural number, `420`. You can consider
+such transformation as a particular case of a general principle in computing by
+which functions should take as broadest input as possible and return as
+thinnest output as possible. Like wise, such rational literals as `1234.567e0`
+or `1234.567E0` should be transformed into an ocurrence of the natural number
+one (`1`).
 
-`1234.567E0
-`
-should be transformed into an ocurrence of the natural number one (`1`).
-
-A rational number literal can represent a lot of different rational numbers. If a `1234.567` is required at any time when the `arithmetic precision` of the scope is set to `5`, it should automatically be transformed into the rational number `1234.6`. If the `arithmetic precision` is set to `7` or larger, it has to remain the same (`1234.567`).
+A rational number literal can represent a lot of different rational numbers. If
+a `1234.567` is required at any time when the `arithmetic precision` of the
+scope is set to `5`, it should automatically be transformed into the rational
+number `1234.6`. If the `arithmetic precision` is set to `7` or larger, it has
+to remain the same (`1234.567`).
 
 FIXME talk about the `width` and `precision` keywords.
 
 
 ###### negative rational numbers
 
-A negative rational number can not be represented using a literal, but rather as an expression (MISSING LINK TO EXPRESSIONS) consisting of the occurrence of a \[positive\] rational literal following the unary operator minus.
+A negative rational number can not be represented using a literal, but rather
+as an expression (MISSING LINK TO EXPRESSIONS) consisting of the occurrence of
+a \[positive\] rational literal following the unary operator minus.
 
 
 ### syntax notation
