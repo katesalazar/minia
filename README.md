@@ -112,6 +112,8 @@ TODO
 
 ### lexical conventions
 
+A program consists of exactly one document, consisting in source code. It is translated in several phases, which are described in FIXME BROKEN REFERENCE.
+
 TODO
 
 Non-ASCII characters are not allowed in programs written in minia language.
@@ -123,12 +125,14 @@ TODO maybe, probably, forbid ASCII punctuation.
 
 #### tokens
 
+There are four classes of tokens: identifiers, keywords, literals, and other separators. Blanks, horizontal and vertical tabs, newlines, formfeeds and comments as described below (collectively, \`\`white space") are _mostly_ ignored except as they separate tokens. Some white space might be required to separate otherwise adjacent identifiers, keywords, and literals. Some white space might have some degree of meaning, like the white space (excluding comments) in between the words (keywords?) `comment` and `ends` which together are used to close comments.
+
 TODO
 
 
 #### comments
 
-TODO
+The word (keyword?) `comment` introduce a comment, which terminates with the words (keywords?) `comment ends` (with any amount of white space (excluding comments themselves) in between `comment` and `ends`. Comments do **not** nest, and they do not occur within a string literal.
 
 
 #### identifiers
@@ -158,12 +162,38 @@ TODO
 
 ###### natural literals
 
-TODO
+A natural literal is decimal (i.e. base-ten).
+
+The primitive type, if any, of a natural literal; is implementation detail.
+
+A natural literal consists of a zero (0) or a non zero digit (1-9) followed by **any** number of digits without restriction.
+
+FIXME talk about the `width` keyword.
+
+
+###### integers
+
+An integer is represented by the occurrence of a natural literal following the unary operator minus. For reasons of strictly elegance, zero should be preferrably used without the minus sign, as minus zero has to be automatically transformed in the natural zero.
 
 
 ###### rational literals
 
-TODO
+A rational literal is decimal (i.e. base-ten).
+
+The primitive type, if any, of a rational literal; is implementation detail.
+
+A positive rational literal consists of an optional natural part, followed by a mandatory dot, followed by a decimal part which can not be a list of zeroed digits, followed by an optional part where an `e` or `E` is mandatory and then a minus sign is optional and lastly a natural exponent is required.
+
+The natural part, if any, consists of a zero (0) or a non zero digit (1-9) followed by any number of digits without restriction. The decimal part consists of any number of zeroed digits, followed by a non zero digit (1-9), followed by any number of digits without restriction. The exponent consists of a zero (0) or a non zero digit (1-9) followed by any number of digits without restriction.
+
+As written before, the natural part is optional. The decimal part is mandatory. The exponent is optional.
+
+FIXME talk about the `width` and `precision` keywords.
+
+
+###### negative rational literals
+
+A negative rational literal is represented by the occurrence of a \[positive\] rational literal following the unary operator minus.
 
 
 ### syntax notation
