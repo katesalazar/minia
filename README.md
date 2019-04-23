@@ -192,14 +192,20 @@ The natural part, if any, consists of a zero (0) or a non zero digit (1-9) follo
 
 As written before, the natural part is optional. The decimal part is mandatory. The exponent is optional. The dot, separating the optional natural part (if any) from the mandatory decimal part, is mandatory. The `e` or `E`, separating the mandatory decimal part from the optional exponent part, is optional.
 
-As a consequence, there is no way to represent zero as a rational literal. That's alright, because zero is natural, and in the Minia language every natural number can be promoted to a positive rational number. Any other natural numbers can be expressed as a rational literal, e.g. `420` can be also expressed as `.420e3` or `.420E3`. The program should detect this and automatically transform such rational number into a natural number. You can consider such transformation as a particular case of a general principle in computing by which functions should take as broadest input as possible and return as thinnest output as possible.
+As a consequence, there is no way to represent zero as a rational literal. That's alright, because zero is natural, and in the Minia language every natural number can be promoted to a positive rational number. Any other natural numbers can be expressed as a rational literal, e.g. `420` can be also expressed as `.420e3` or `.420E3`. The interpreter program,
+or, in some conditions, maybe the compiler,
+or, if applicable, the compiled program, should detect this and automatically transform such rational number into a natural number, `420`. You can consider such transformation as a particular case of a general principle in computing by which functions should take as broadest input as possible and return as thinnest output as possible. Like wise, such rational literals as `1234.567e0` or
+
+`1234.567E0
+`
+should be transformed into an ocurrence of the natural number one (`1`).
 
 FIXME talk about the `width` and `precision` keywords.
 
 
 ###### negative rational numbers
 
-A negative rational number can not be represented using a literal, but rather as an expression (MISSING LINK TO EXPRESSIONS) consisting of is represented by the occurrence of a \[positive\] rational literal following the unary operator minus.
+A negative rational number can not be represented using a literal, but rather as an expression (MISSING LINK TO EXPRESSIONS) consisting of the occurrence of a \[positive\] rational literal following the unary operator minus.
 
 
 ### syntax notation
