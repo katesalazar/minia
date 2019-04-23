@@ -87,9 +87,11 @@ Some key features of the language:
     accident.
 
   * Unopinionated block syntax. The semicolon wars have no place here. This
-    project considers both white space based blocks (e.g. Python...) and brace
-    based blocks (e.g. C, C++, C#, Rust...) presentation accident, so being
-    a problem belonging at the editor level.
+    project considers both white space based blocks (e.g. [Python][23],
+    [Ruby][24]...) and brace
+    based blocks (e.g. [C][22], C++, C#, [Rust][21]...) presentation accident,
+    so if a problem, then an irrelevant one, so
+    belonging in the editors level.
 
   * Unopinionated comment syntax. FIXME.
 
@@ -529,3 +531,11 @@ Licensed to you under the terms of a free software license, details TBD.
 [19]: http://github.com/katesalazar/minia/tree/master#literals
 
 [20]: http://github.com/katesalazar/minia/tree/master#string-literals
+
+[21]: http://www.rust-lang.org/
+
+[22]: http://www.open-std.org/jtc1/sc22/wg14/
+
+[23]: http://www.python.org
+
+[24]: http://www.ruby-lang.org/en/
