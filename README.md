@@ -11,19 +11,19 @@ Minia programming language spec WIP.
 
 * [reference][5]
 
-  * [introduction][...]
+  * [introduction][14]
 
-  * [lexical conventions][...]
+  * [lexical conventions][15]
 
-    * [tokens][...]
+    * [tokens][16]
 
-    * [comments][...]
+    * [comments][17]
 
-    * [identifiers][...]
+    * [identifiers][18]
 
-    * [literals][...]
+    * [literals][19]
 
-      * [string literals][...]
+      * [string literals][20]
 
       * [number literals][...]
 
@@ -424,10 +424,40 @@ Licensed to you under the terms of a free software license, details TBD.
 
 [1]: http://github.com/katesalazar/minia/tree/master#features
 
+[2]: http://github.com/katesalazar/minia/tree/master#resources
+
+[3]: http://github.com/katesalazar/minia/tree/master#grammar
+
+[4]: http://github.com/katesalazar/minia/tree/master#grammar-Yacc-format
+
+[5]: http://github.com/katesalazar/minia/tree/master#reference
+
 [6]: http://github.com/katesalazar/minia/tree/master#scanner-lex-format
 
+[7]: http://github.com/katesalazar/minia/tree/master#implementations
+
 [8]: http://github.com/katesalazar/minia/tree/master#acknowledgments
+
+[9]: http://github.com/katesalazar/minia/tree/master#copying
 
 [10]: http://github.com/katesalazar/amara
 
 [11]: http://github.com/katesalazar/minia/tree/master/minia.grammar
+
+[12]: http://github.com/katesalazar/minia/tree/master#grammar-BNF
+
+[13]: http://github.com/katesalazar/minia/tree/master#rationale
+
+[14]: http://github.com/katesalazar/minia/tree/master#introduction
+
+[15]: http://github.com/katesalazar/minia/tree/master#lexical-conventions
+
+[16]: http://github.com/katesalazar/minia/tree/master#tokens
+
+[17]: http://github.com/katesalazar/minia/tree/master#comments
+
+[18]: http://github.com/katesalazar/minia/tree/master#identifiers
+
+[19]: http://github.com/katesalazar/minia/tree/master#literals
+
+[20]: http://github.com/katesalazar/minia/tree/master#string-literals
