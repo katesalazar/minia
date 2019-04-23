@@ -190,6 +190,8 @@ A natural literal consists of either:
 
 2. A non zero digit (1-9) followed by **any** number of digits without restriction.
 
+A natural number is not necessarily semantically correct even lexically could be correct. If a `420` is required at any time when the `arithmetic width` of the scope is set to `1`, an error is required to happen.
+
 FIXME talk about the `width` keyword.
 
 
@@ -217,6 +219,8 @@ or, if applicable, the compiled program, should detect this and automatically tr
 `1234.567E0
 `
 should be transformed into an ocurrence of the natural number one (`1`).
+
+A rational number literal can represent a lot of different rational numbers. If a `1234.567` is required at any time when the `arithmetic precision` of the scope is set to `5`, it should automatically be transformed into the rational number `1234.6`. If the `arithmetic precision` is set to `7` or larger, it has to remain the same (`1234.567`).
 
 FIXME talk about the `width` and `precision` keywords.
 
