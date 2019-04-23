@@ -75,11 +75,23 @@ Some key features of the language:
 
 * _High readability_ syntax.
 
-* Unopinionated string concatenation. Does not impose any string concatenation
-  operator on you. ~~Encourages to use text syntax for string concatenation and
-  lets you define an alias using an infix operator of your choice.~~ Provides
-  only a verbose `concatenation` operator and considers glyphs as presentation
-  accident.
+* _Unopinionated_ syntax.
+
+  * Unopinionated string concatenation. Does not impose any string
+    concatenation
+    operator on you. ~~Encourages to use text syntax for string concatenation
+    and
+    lets you define an alias using an infix operator of your choice.~~ Provides
+    only a verbose `concatenation` operator and considers glyphs as
+    presentation
+    accident.
+
+  * Unopinionated block syntax. The semicolon wars have no place here. This
+    project considers both white space based blocks (e.g. Python...) and brace
+    based blocks (e.g. C, C++, C#, Rust...) presentation accident, so being
+    a problem belonging at the editor level.
+
+  * Unopinionated comment syntax. FIXME.
 
 * Arithmetic expressions. Evaluation theoretically separable from execution.
 
