@@ -173,6 +173,10 @@ Number literals are of two types:
 
 You might be missing the integer set. But integers can be constructed as expressions consisting of the unary operator minus followed by a natural number literal. Like wise, a negative rational number can be constructed as an expression consisting of the unary operator minus followed by a \[positive\] rational number literal.
 
+In general there are no hard wired bounds in the language. But of course bounds will be imposed on you by the resource availability of the machine running the program.
+There will also be hard wired bounds; even the language does not hard wire bounds, it will demand you to impose hard wire bounds on the scopes of your program where arithmetic operations are happening, you will use the `width` and `precision` keywords for that.
+The `width` keyword acts on natural, integer, and rational numbers. The `precision` keyword acts on rational numbers.
+
 
 ###### natural literals
 
