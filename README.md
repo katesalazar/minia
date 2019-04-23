@@ -147,7 +147,11 @@ TODO
 
 #### literals
 
-TODO
+Literals can be of two types:
+
+* String literals (LINK MISSING).
+
+* Number literals (LINK MISSING).
 
 
 ##### string literals
@@ -157,7 +161,17 @@ TODO
 
 ##### number literals
 
-TODO
+Number literals are of two types:
+
+* natural number literals (MISSING LINK TO)
+
+* rational number literals )MISING LINK TO) which are only positive rational number literals
+
+  * excluding zero, which can be represented as a natural number literal
+
+  * including any other natural number that can, of course, also be represented using natural number literals.
+
+You might be missing the integer set. But integers can be constructed as expressions consisting of the unary operator minus followed by a natural number literal. Like wise, a negative rational number can be constructed as an expression consisting of the unary operator minus followed by a \[positive\] rational number literal.
 
 
 ###### natural literals
