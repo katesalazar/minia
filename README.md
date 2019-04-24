@@ -88,8 +88,11 @@ Some key features of the language:
 
   * Unopinionated block syntax. The semicolon wars have no place here. This
     project considers both white space based blocks (e.g. [Python][23],
-    [Ruby][24]...) and brace
-    based blocks (e.g. [C][22], C++, C#, [Rust][21]...) presentation accident,
+    [Ruby][24]...), brace
+    based blocks (e.g. [C][22], C++, C#, [Rust][21]...),
+    and...
+    maybe also parens based scopes (e.g. lisps, Scheme...)
+    all three groups as presentation accident,
     so if a problem, then an irrelevant one, so
     belonging in the editors level.
 
