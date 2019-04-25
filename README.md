@@ -25,25 +25,29 @@ Minia programming language spec WIP.
 
       * [string literals][20]
 
-      * [number literals][...]
+      * [number literals][25]
 
-        * [natural literals][...]
+        * [natural literals][26]
 
-        * [rational literals][...]
+        * [rational literals][27]
 
-  * [syntax notation][...]
+  * [syntax notation][29]
 
-  * [meaning of identifiers][...]
+  * [meaning of identifiers][30]
 
-  * [syntax notation][...]
+  * [conversions][...]
 
-  * [syntax notation][...]
+  * [expressions][...]
 
-  * [syntax notation][...]
+  * [operators][...]
+
+  * [declarations][...]
+
+  * [operations][...]
+
+  * [scopes][...]
 
   * [grammar][3]
-
-  * [...]
 
 * [resources][2]
 
@@ -118,6 +122,8 @@ Some key features of the language:
   * Command line applications specialized side effects non computational
     operations.
 
+[Back to top][28]
+
 
 ## reference
 
@@ -144,6 +150,8 @@ language, but they should be allowed and treated with no meaning, like
 
 TODO maybe, probably, forbid ASCII punctuation.
 
+[Back to top][28]
+
 
 #### tokens
 
@@ -158,6 +166,8 @@ are used to close comments.
 
 TODO
 
+[Back to top][28]
+
 
 #### comments
 
@@ -165,6 +175,8 @@ The word (keyword?) `comment` introduces a comment, which terminates with the
 words (keywords?) `comment ends` (with any amount of white space (excluding
 comments themselves, and extensions) in between `comment` and `ends`. Comments
 do **not** nest, and they do not occur within a string literal.
+
+[Back to top][28]
 
 
 #### extensions
@@ -175,11 +187,15 @@ standard extension, which terminates with the words (keywords?)
 themselves, and comments) in between `extension` and `ends`. Extensions do
 **not** nest, and they do not occur within a string literal.
 
+[Back to top][28]
+
 
 ##### comments inside extensions
 
 By the very definition of extensions, any syntax is allowed for commenting code
 inside extensions.
+
+[Back to top][28]
 
 
 #### identifiers
@@ -199,6 +215,8 @@ Literals can be of two types:
 * String literals (LINK MISSING).
 
 * Number literals (LINK MISSING).
+
+[Back to top][28]
 
 
 ##### string literals
@@ -236,6 +254,8 @@ program where arithmetic operations are happening, you will use the `width` and
 The `width` keyword acts on natural, integer, and rational numbers. The
 `precision` keyword acts on rational numbers.
 
+[Back to top][28]
+
 
 ###### natural literals
 
@@ -256,6 +276,8 @@ the scope is set to `1`, an error is required to happen.
 
 FIXME talk about the `width` keyword.
 
+[Back to top][28]
+
 
 ###### integers
 
@@ -264,6 +286,8 @@ consisting of the occurrence of a natural literal following the unary operator
 minus. For reasons of strictly elegance, zero should be preferrably used
 without the minus sign, as minus zero has to be automatically transformed in
 the natural zero.
+
+[Back to top][28]
 
 
 ###### rational literals
@@ -310,12 +334,16 @@ to remain the same (`1234.567`).
 
 FIXME talk about the `width` and `precision` keywords.
 
+[Back to top][28]
+
 
 ###### negative rational numbers
 
 A negative rational number can not be represented using a literal, but rather
 as an expression (MISSING LINK TO EXPRESSIONS) consisting of the occurrence of
 a \[positive\] rational literal following the unary operator minus.
+
+[Back to top][28]
 
 
 ### syntax notation
@@ -454,6 +482,8 @@ This is WIP.
 
 TODO
 
+[Back to top][28]
+
 
 ### grammar (Yacc format)
 
@@ -469,10 +499,14 @@ TODO
 
 The [amara project][10] (early WIP).
 
+[Back to top][28]
+
 
 ## acknowledgements
 
 &lt;Insert acknowledgements here&gt;
+
+[Back to top][28]
 
 
 ## copying
@@ -508,6 +542,8 @@ Copyright (c) 2018-2019 the minia language authors and contributors.
       OPERATION`).
 
 Licensed to you under the terms of a free software license, details TBD.
+
+[Back to top][28]
 
 
 [1]: http://github.com/katesalazar/minia/tree/master#features
@@ -557,3 +593,15 @@ Licensed to you under the terms of a free software license, details TBD.
 [23]: http://www.python.org
 
 [24]: http://www.ruby-lang.org/en/
+
+[25]: http://github.com/katesalazar/minia/tree/master#number-literals
+
+[26]: http://github.com/katesalazar/minia/tree/master#natural-literals
+
+[27]: http://github.com/katesalazar/minia/tree/master#rational-literals
+
+[28]: http://github.com/katesalazar/minia/tree/master#table-of-contents
+
+[29]: http://github.com/katesalazar/minia/tree/master#syntax-notation
+
+[30]: http://github.com/katesalazar/minia/tree/master#meaning-of-identifiers
