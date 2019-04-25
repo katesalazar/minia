@@ -105,7 +105,7 @@ Some key features of the language:
 
 * Arithmetic expressions.
 
-  * Evaluation theoretically separable from execution.
+  * Value semantics. Evaluation theoretically separable from execution.
 
     * Automatic memoization has to be theoretically possible, and the guarantee of
       some degree of **optional** memoization should be available as might be very desirable for some user niches.
