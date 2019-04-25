@@ -92,14 +92,12 @@ Some key features of the language:
 
   * Unopinionated block syntax. The semicolon wars have no place here. This
     project considers both white space based blocks (e.g. [Python][23],
-    [Ruby][24]...), brace
-    based blocks (e.g. [C][22], C++, C#, [Rust][21]...),
-    and...
-    maybe also parens based scopes (e.g. lisps, Scheme...)
-    all three groups as presentation accident,
-    so if a problem, then an irrelevant one, from the computer science point of view, because it is simply notation,
-    so, again, if a problem, then
-    belonging in the editors level, because, again, it is presentation accident.
+    [Ruby][24]...), brace based blocks (e.g. [C][22], C++, C#, [Rust][21]...),
+    and... maybe also parens based scopes (e.g. lisps, Scheme...) all three
+    groups as presentation accident, so if a problem, then an irrelevant one,
+    from the computer science point of view, because it is simply notation, so,
+    again, if a problem, then belonging in the editors level, because, again,
+    it is presentation accident.
 
   * Unopinionated comment syntax. FIXME.
 
@@ -107,19 +105,29 @@ Some key features of the language:
 
   * Value semantics. Evaluation theoretically separable from execution.
 
-    * Automatic memoization has to be theoretically possible, and the guarantee of
-      some degree of **optional** memoization should be available as might be very desirable for some user niches.
+    * Automatic memoization has to be theoretically possible, and the guarantee
+      of some degree of **optional** memoization should be available as might
+      be very desirable for some user niches.
 
 * The natural or &#8469; (`N`), integer or &#8484; (`Z`) and rational or
   &#8474; (`Q`) sets. Basic arithmetic on them: addition, substraction,
   multiplication, division, exponentiation.
 
-  * ~~Absence~~ Abstraction of machine two's complement numbers architecture, machine floating point numbers, and whatever other Von Neumann architectures implications. The interpreter is
-    to choose the underlying technique for resolving rational numbers, using
-    floating or fixed point arithmetic, at will. Machine stuff, specially Von Neumann architectures implications, are implementation detail.
+  * ~~Absence~~ Abstraction of machine two's complement numbers architecture,
+    machine floating point numbers, and whatever other Von Neumann
+    architectures implications. The interpreter is to choose the underlying
+    technique for resolving rational numbers, using floating or fixed point
+    arithmetic, at will. Machine stuff, specially Von Neumann architectures
+    implications, are implementation detail.
 
     * The programmer might configure a scope in order to ban floating point
-      arithmetic in it. It is a right of the programmer, to choose some given arithmetic precision, without being constrained by the available tools. There must always be some kind of quantitative constraint that the tool imposes on the programmer, but qualitative constraints on essential concepts (such as e.g. arithmetic repeatability, and predictability, and the absence of a need to achieve a consensus) are wrong and have no place here.
+      arithmetic in it. It is a right of the programmer, to choose some given
+      arithmetic precision, without being constrained by the available tools.
+      There must always be some kind of quantitative constraint that the tool
+      imposes on the programmer, but qualitative constraints on essential
+      concepts (such as e.g. arithmetic repeatability, and predictability, and
+      the absence of a need to achieve a consensus) are wrong and have no place
+      here.
 
 * "Non computational" _operations_, mainly for causing side effects.
 
@@ -247,10 +255,11 @@ Number literals are of two types:
     using natural number literals.
 
 You might be missing the integer set. But integers can be constructed as
-expressions consisting of the unary operator minus followed by a natural number,
-be it literal or be it an expression. Like wise, a negative rational number can be constructed as an
-expression consisting of the unary operator minus followed by either a \[positive\]
-rational number expression or a \[positive\] rational number literal.
+expressions consisting of the unary operator minus followed by a natural
+number, be it literal or be it an expression. Like wise, a negative rational
+number can be constructed as an expression consisting of the unary operator
+minus followed by either a \[positive\] rational number expression or a
+\[positive\] rational number literal.
 
 In general there are no hard wired bounds in the language. But of course bounds
 will be imposed on you by the resource availability of the machine running the
@@ -549,14 +558,19 @@ conditions apply instead:
 >     * (2018) Sequential operations conjunction: lexicon (`OPERATION and then
 >       OPERATION`).
 > 
-> Licensed to you under the terms of a free software license (as in [compatible with either the GNU GPL or the GNU FDL][32] as per the [FSF][31], where each applies), **details TBD**.
+> Licensed to you under the terms of a free software license (as in [compatible
+> with either the GNU GPL or the GNU FDL][32] as per the [FSF][31], where each
+> applies), **details TBD**.
 > 
-> \[Clarifying on the previous paragraph, \] if your circumstances or worries make so this degree and abstraction and vagueness of freedoms still
-> doesn't fit you, then we require you to:
+> \[Clarifying on the previous paragraph, \] if your circumstances or worries
+> make so this degree and abstraction and vagueness of freedoms still doesn't
+> fit you, then we require you to:
 > 
 > * Raise us your case.
 > 
-> * In the interim consider this under either the latest version of the [GNU GPL](http://www.gnu.org/licenses/gpl.html) or the latest version of the [GNU FDL](http://www.gnu.org/licenses/fdl.html), where each applies.
+> * In the interim consider this under either the latest version of the
+> [GNU GPL](http://www.gnu.org/licenses/gpl.html) or the latest version of the
+> [GNU FDL](http://www.gnu.org/licenses/fdl.html), where each applies.
 
 [Back to top][28]
 
