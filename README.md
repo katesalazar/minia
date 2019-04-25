@@ -545,7 +545,7 @@ conditions apply instead:
 > 
 > Licensed to you under the terms of a free software license (as in [compatible with either the GNU GPL or the GNU FDL][32] as per the [FSF][31], where each applies), **details TBD**.
 > 
-> \[Clarifying on the previous paragraph, \] if your circumstances or worries make so this degree of freedoms still
+> \[Clarifying on the previous paragraph, \] if your circumstances or worries make so this degree and abstraction and vagueness of freedoms still
 > doesn't fit you, then we require you to:
 > 
 > * Raise us your case.
