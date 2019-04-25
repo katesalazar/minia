@@ -103,7 +103,12 @@ Some key features of the language:
 
   * Unopinionated comment syntax. FIXME.
 
-* Arithmetic expressions. Evaluation theoretically separable from execution.
+* Arithmetic expressions.
+
+  * Evaluation theoretically separable from execution.
+
+    * Automatic memoization has to be theoretically possible, and the guarantee of
+      some degree of **optional** memoization should be available as might be very desirable for some user niches.
 
 * The natural or &#8469; (`N`), integer or &#8484; (`Z`) and rational or
   &#8474; (`Q`) sets. Basic arithmetic on them: addition, substraction,
