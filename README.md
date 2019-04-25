@@ -249,8 +249,8 @@ Number literals are of two types:
 You might be missing the integer set. But integers can be constructed as
 expressions consisting of the unary operator minus followed by a natural number,
 be it literal or be it an expression. Like wise, a negative rational number can be constructed as an
-expression consisting of the unary operator minus followed by a \[positive\]
-rational number literal.
+expression consisting of the unary operator minus followed by either a \[positive\]
+rational number expression or a \[positive\] rational number literal.
 
 In general there are no hard wired bounds in the language. But of course bounds
 will be imposed on you by the resource availability of the machine running the
