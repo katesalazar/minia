@@ -269,7 +269,7 @@ The `width` keyword acts on natural, integer, and rational numbers. The
 
 A natural literal is decimal (i.e. base-ten).
 
-The primitive type, if any, of a natural literal; is implementation detail.
+The machine type, if any, of a natural literal; is implementation detail.
 
 A natural literal consists of either:
 
@@ -302,7 +302,7 @@ the natural zero.
 
 A rational literal is decimal (i.e. base-ten).
 
-The primitive type, if any, of a rational literal; is implementation detail.
+The machine type, if any, of a rational literal; is implementation detail.
 
 A positive rational literal consists of an optional natural part, followed by a
 mandatory dot, followed by a decimal part which can not be a list of zeroed
