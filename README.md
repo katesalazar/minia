@@ -97,8 +97,9 @@ Some key features of the language:
     and...
     maybe also parens based scopes (e.g. lisps, Scheme...)
     all three groups as presentation accident,
-    so if a problem, then an irrelevant one, so
-    belonging in the editors level.
+    so if a problem, then an irrelevant one, from the computer science point of view, because it is simply notation,
+    so, again, if a problem, then
+    belonging in the editors level, because, again, it is presentation accident.
 
   * Unopinionated comment syntax. FIXME.
 
