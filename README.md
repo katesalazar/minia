@@ -518,32 +518,32 @@ The [amara project][10] (early WIP).
 In jurisdictions where this is not allowed, the following copyright terms and
 conditions apply instead:
 
-Copyright (c) 2018-2019 the minia language authors and contributors.
-
-* Authored by:
-
-  * 2019 &lt;your name here&gt;
-
-    * &lt;your work here&gt;
-
-  * 2018-2019 Mercedes Catherine Salazar (katesalazar):
-
-    * (2018-2019) Lexicon, syntax, semantics.
-
-* Contributions by:
-
-  * 2019 &lt;your name here&gt;
-
-    * &lt;your work here&gt;
-
-  * 2018-2019 Mia (spreadLink):
-
-    * (2018-2019) Syntax advisory.
-
-    * (2018) Sequential operations conjunction: lexicon (`OPERATION and then
-      OPERATION`).
-
-Licensed to you under the terms of a free software license, details TBD.
+> Copyright (c) 2018-2019 the minia language authors and contributors.
+> 
+> * Authored by:
+> 
+>   * 2019 &lt;your name here&gt;
+> 
+>     * &lt;your work here&gt;
+> 
+>   * 2018-2019 Mercedes Catherine Salazar (katesalazar):
+> 
+>     * (2018-2019) Lexicon, syntax, semantics.
+> 
+> * Contributions by:
+> 
+>   * 2019 &lt;your name here&gt;
+> 
+>     * &lt;your work here&gt;
+> 
+>   * 2018-2019 Mia (spreadLink):
+> 
+>     * (2018-2019) Syntax advisory.
+> 
+>     * (2018) Sequential operations conjunction: lexicon (`OPERATION and then
+>       OPERATION`).
+> 
+> Licensed to you under the terms of a free software license, details TBD.
 
 [Back to top][28]
 
