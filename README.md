@@ -148,8 +148,8 @@ TODO maybe, probably, forbid ASCII punctuation.
 #### tokens
 
 There are four classes of tokens: identifiers, keywords, literals, and other
-separators. Blanks, horizontal and vertical tabs, newlines, formfeeds and
-comments as described below (collectively, \`\`white space") are _mostly_
+separators. Blanks, horizontal and vertical tabs, newlines, formfeeds, comments
+and extensions as described below (collectively, \`\`white space") are _mostly_
 ignored except as they separate tokens. Some white space might be required to
 separate otherwise adjacent identifiers, keywords, and literals. Some white
 space might have some degree of meaning, like the white space (excluding
@@ -163,8 +163,23 @@ TODO
 
 The word (keyword?) `comment` introduces a comment, which terminates with the
 words (keywords?) `comment ends` (with any amount of white space (excluding
-comments themselves) in between `comment` and `ends`. Comments do **not** nest,
-and they do not occur within a string literal.
+comments themselves, and extensions) in between `comment` and `ends`. Comments
+do **not** nest, and they do not occur within a string literal.
+
+
+#### extensions
+
+The word (keyword?) `extension` introduces the ocurrence of the use of a non
+standard extension, which terminates with the words (keywords?)
+`extension ends` (with any amount of white space (excluding extensions
+themselves, and comments) in between `extension` and `ends`. Extensions do
+**not** nest, and they do not occur within a string literal.
+
+
+##### comments inside extensions
+
+By the very definition of extensions, any syntax is allowed for commenting code
+inside extensions.
 
 
 #### identifiers
