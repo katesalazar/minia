@@ -171,21 +171,23 @@ TODO
 
 #### comments
 
-The word (keyword?) `comment` introduces a comment, which terminates with the
-words (keywords?) `comment ends` (with any amount of white space (excluding
-comments themselves, and extensions) in between `comment` and `ends`. Comments
-do **not** nest, and they do not occur within a string literal.
+The word (keyword?) `comment` (using any capitalization) introduces a comment,
+which terminates with the words (keywords?) `comment ends` (using any
+capitalization, with any amount of white space (excluding comments themselves,
+and extensions) in between `comment` and `ends`. Comments do **not** nest, and
+they do not occur within a string literal.
 
 [Back to top][28]
 
 
 #### extensions
 
-The word (keyword?) `extension` introduces the ocurrence of the use of a non
-standard extension, which terminates with the words (keywords?)
-`extension ends` (with any amount of white space (excluding extensions
-themselves, and comments) in between `extension` and `ends`. Extensions do not
-nest, and they do not occur within a string literal.
+The word (keyword?) `extension` (using any capitalization) introduces the
+ocurrence of the use of a non standard extension, which terminates with the
+words (keywords?) `extension ends` (using any capitalization, with any amount
+of white space (excluding extensions themselves, and comments) in between
+`extension` and `ends`. Extensions do not nest, and they do not occur within a
+string literal.
 
 [Back to top][28]
 
