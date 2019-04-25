@@ -119,7 +119,7 @@ Some key features of the language:
     floating or fixed point arithmetic, at will. Machine stuff, specially Von Neumann architectures implications, are implementation detail.
 
     * The programmer might configure a scope in order to ban floating point
-      arithmetic in it. It is a right of the programmer, to choose some given arithmetic precision, without being constrained by the available tools.
+      arithmetic in it. It is a right of the programmer, to choose some given arithmetic precision, without being constrained by the available tools. There must always be some kind of quantitative constraint that the tool imposes on the programmer, but qualitative constraints on essential concepts (such as e.g. arithmetic repeatability, and predictability, and the absence of a need to achieve a consensus) are wrong and have no place here.
 
 * "Non computational" _operations_, mainly for causing side effects.
 
