@@ -543,7 +543,14 @@ conditions apply instead:
 >     * (2018) Sequential operations conjunction: lexicon (`OPERATION and then
 >       OPERATION`).
 > 
-> Licensed to you under the terms of a free software license (as in [compatible with either the GNU GPL or the GNU FDL][32] as per the [FSF][31], where each applies), details TBD. If this still doesn't fit you, please raise us your case.
+> Licensed to you under the terms of a free software license (as in [compatible with either the GNU GPL or the GNU FDL][32] as per the [FSF][31], where each applies), **details TBD**.
+> 
+> \[Clarifying on the previous paragraph, \] if your circumstances or worries make so this degree of freedoms still
+> doesn't fit you, then we require you to:
+> 
+> * Raise us your case.
+> 
+> * In the interim consider this under either the latest version of the [GNU GPL](http://www.gnu.org/licenses/gpl.html) or the latest version of the [GNU FDL](http://www.gnu.org/licenses/fdl.html), where each applies.
 
 [Back to top][28]
 
