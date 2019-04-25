@@ -114,9 +114,9 @@ Some key features of the language:
   &#8474; (`Q`) sets. Basic arithmetic on them: addition, substraction,
   multiplication, division, exponentiation.
 
-  * Absence of machine integers and floating point numbers. The interpreter is
+  * ~~Absence~~ Full abstraction of machine integers and machine floating point numbers. The interpreter is
     to choose the underlying technique for resolving rational numbers, using
-    floating or fixed point arithmetic, at will.
+    floating or fixed point arithmetic, at will. Machine stuff, specially Von Neuman implications, are implementation detail.
 
     * The programmer might configure a scope in order to ban floating point
       arithmetic in it.
