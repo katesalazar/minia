@@ -184,8 +184,8 @@ do **not** nest, and they do not occur within a string literal.
 The word (keyword?) `extension` introduces the ocurrence of the use of a non
 standard extension, which terminates with the words (keywords?)
 `extension ends` (with any amount of white space (excluding extensions
-themselves, and comments) in between `extension` and `ends`. Extensions do
-**not** nest, and they do not occur within a string literal.
+themselves, and comments) in between `extension` and `ends`. Extensions do not
+nest, and they do not occur within a string literal.
 
 [Back to top][28]
 
