@@ -247,8 +247,8 @@ Number literals are of two types:
     using natural number literals.
 
 You might be missing the integer set. But integers can be constructed as
-expressions consisting of the unary operator minus followed by a natural number
-literal. Like wise, a negative rational number can be constructed as an
+expressions consisting of the unary operator minus followed by a natural number,
+be it literal or be it an expression. Like wise, a negative rational number can be constructed as an
 expression consisting of the unary operator minus followed by a \[positive\]
 rational number literal.
 
