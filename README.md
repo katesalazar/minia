@@ -11,13 +11,13 @@ Minia programming language spec WIP.
 
 * [reference][5]
 
-  * [introduction][14]
+  * [1 introduction][14]
 
-  * [lexical conventions][15]
+  * [2 lexical conventions][15]
 
-    * [tokens][16]
+    * [2.1 tokens][16]
 
-    * [extensions][...]
+    * [2.2 extensions][...]
 
     * [comments][17]
 
@@ -148,12 +148,12 @@ Some key features of the language:
 TODO
 
 
-### introduction
+### 1 introduction
 
 TODO
 
 
-### lexical conventions
+### 2 lexical conventions
 
 A program consists of exactly one document, consisting of source code.
 It is translated in several phases, which are described in FIXME BROKEN REFERENCE.
@@ -171,7 +171,7 @@ TODO maybe, probably, forbid ASCII punctuation.
 [Back to top][28]
 
 
-#### tokens
+#### 2.1 tokens
 
 There are four classes of tokens: identifiers, keywords, literals, and other
 separators. Blanks, horizontal and vertical tabs, newlines, formfeeds, comments
@@ -183,6 +183,19 @@ comments) in between the words (keywords?) `comment` and `ends` which together
 are used to close comments.
 
 TODO
+
+[Back to top][28]
+
+
+#### 2.2 extensions
+
+Extensions are a provision enabling:
+
+* Compiler or interpreter quirks.
+
+* Nonstandard (beyond standard behavior).
+
+  * Future evolution of the language.
 
 [Back to top][28]
 
