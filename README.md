@@ -17,9 +17,13 @@ Minia programming language spec WIP.
 
     * [tokens][16]
 
+    * [extensions][...]
+
     * [comments][17]
 
     * [identifiers][18]
+
+    * [keywords][...]
 
     * [literals][19]
 
@@ -221,7 +225,36 @@ TODO
 
 #### keywords
 
-TODO
+The following words are reserved for the use as keywords, and may not be used
+otherwise, unless as a part of an extension, a comment, or an identifier::
+
+    an                       and                      application
+    args                     at                       awesome
+    bound                    carriage                 causes
+    chain                    command                  commands
+    by                       char                     character
+    com                      comment                  divided
+    division                 does                     ease
+    effects                  else                     end
+    entry                    ext                      extension
+    feed                     formula                  function
+    greater                  id                       ident
+    identifier               integer                  interface
+    if                       is                       it
+    less                     line                     minus
+    natural                  new                      no
+    nor                      nothing                  of
+    operator                 point                    print
+    rational                 read                     receives
+    return                   returns                  run
+    set                      side                     simple
+    small                    so                       substraction
+    times                    than                     that
+    the                      then                     thread
+    to                       type                     where
+    with                     without
+
+[Back to top][28]
 
 
 #### literals
@@ -369,6 +402,15 @@ TODO
 
 
 ### meaning of identifiers
+
+Identifiers, or names, refer to a variety of things: functions; and objects. An
+object, sometimes called a variable, is a location in storage, and its
+interpretation depends on one main attribute: its _type_. The type determines
+the meaning of the values found in the identified object. A name also has a
+scope, which is the region of the program in which it is known, and a linkage,
+which determines whether the same name in another scope refers to the same
+object or function. Scope and linkage are discussed in REFERENCE IS MISSING
+HERE.
 
 TODO
 
