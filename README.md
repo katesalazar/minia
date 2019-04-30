@@ -29,11 +29,13 @@ Minia programming language spec WIP.
 
       * [2.6.1 string literals][20]
 
-      * [2.6.2 number literals][25]
+      * [2.6.2 boolean literals][...]
 
-        * [2.6.2.1 natural literals][26]
+      * [2.6.3 number literals][25]
 
-        * [2.6.2.2 rational literals][27]
+        * [2.6.3.1 natural literals][26]
+
+        * [2.6.3.2 rational literals][27]
 
   * [3 syntax notation][29]
 
@@ -291,7 +293,19 @@ Literals can be of two types:
 
 ##### string literals
 
-TODO
+String literals are sequences of strict ASCII (code points less than 128)
+characters, headed by `string` and trailed by `string ends`. They are trimmed.
+Strings headed or trailed by white space can not be represented with string
+literals, but only by _[objects][REFERENCE MISSING]_ typed `string`.
+
+[Back to top][28]
+
+
+##### 2.6.2 boolean literals
+
+Boolean literals can only be either `false` or `true`.
+
+[Back to top][28]
 
 
 ##### number literals
