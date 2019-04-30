@@ -145,12 +145,14 @@ Some key features of the language:
 
 ## reference
 
-TODO
+This section is structured using as model the appendix of the same name in "The
+C Programming Language" (K&R).
 
 
 ### 1 introduction
 
-TODO
+This manual describes the Minia language. The manual is the proposal of a
+standard.
 
 
 ### 2 lexical conventions
