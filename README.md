@@ -39,6 +39,8 @@ Minia programming language spec WIP.
 
   * [meaning of identifiers][30]
 
+    * [basic types][...]
+
   * [conversions][...]
 
   * [expressions][...]
@@ -430,12 +432,71 @@ HERE.
 TODO
 
 
-### conversions
+#### basic types
+
+There are several fundamental types.
+
+Strings are sequences of characters. Characters are strict (128 positions only)
+ASCII. The type is sometimes referred to as `string`.
+
+A boolean value can only be either `true` or `false`.
+
+Natural numbers belong to the `natural` set.
+
+Integer numbers belong to the `integer` set.
+
+Rational numbers belong to the `rational` set.
+
+The `nothing` type specifies an empty set of values. It might be used as the
+type where no value is applicable.
 
 TODO
 
 
+#### derived types
+
+Beside the basic types, there is a conceptually infinite class of derived types
+constructed from the fundamental types in the following ways: _lists_ of
+objects of given types; _functions_ receiving objects of given types and
+returning objects of given types; and _dictionaries_ containing a sequence of
+objects of various types.
+
+In general these methods of constructing objects can be applied recursively.
+
+
+#### type qualifiers
+
+An object's type may have additional qualifiers. Declaring an object `constant`
+announces that its value will not be changed. This doesn't affect the range of
+values or arithmetic properties of the object. Qualifiers are discussed in
+REFERENCE MISSING.
+
+
+### conversions
+
+Some operators may, depending on their operands, cause conversion of the value
+of an operand from one type to another. This section explains the result to be
+expected from such conversions. REFERENCE MISSING summarizes the conversions
+demanded by most ordinary operators; it will be supplemented as required by the
+discussion of each operator.
+
+
+#### integral conversions
+
+Values from the `natural` type can be promoted to the `integer` type. The value
+must remain unchanged.
+
+
+#### rational conversions
+
+Values from the `natural` and `integer` types can be promoted to the `rational`
+type. The value must remain unchanged.
+
+
 ### expressions
+
+The precedence of expression operators is the same as the order of the major
+subsections of this section, highest precedence first.
 
 TODO
 
