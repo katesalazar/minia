@@ -415,7 +415,10 @@ A rational number literal can represent a lot of different rational numbers. If
 a `1234.567` is required at any time when the `arithmetic precision` of the
 scope is set to `5`, it should automatically be transformed into the rational
 number `1234.6`. If the `arithmetic precision` is set to `7` or larger, it has
-to remain the same (`1234.567`).
+to remain the same (`1234.567`). If a `1234.567` was required in a scope where
+the `arithmetic precision` is set to `4` and the `arithmetic width` is set to
+`4` or larger, it should automatically be transformed into the rational number
+`1235.0`, and then into the natural number `1235`.
 
 FIXME talk about the `width` and `precision` keywords.
 
