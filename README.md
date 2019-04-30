@@ -19,41 +19,45 @@ Minia programming language spec WIP.
 
     * [2.2 extensions][...]
 
-    * [comments][17]
+    * [2.3 comments][17]
 
-    * [identifiers][18]
+    * [2.4 identifiers][18]
 
-    * [keywords][...]
+    * [2.5 keywords][...]
 
-    * [literals][19]
+    * [2.6 literals][19]
 
-      * [string literals][20]
+      * [2.6.1 string literals][20]
 
-      * [number literals][25]
+      * [2.6.2 number literals][25]
 
-        * [natural literals][26]
+        * [2.6.2.1 natural literals][26]
 
-        * [rational literals][27]
+        * [2.6.2.2 rational literals][27]
 
-  * [syntax notation][29]
+  * [3 syntax notation][29]
 
-  * [meaning of identifiers][30]
+  * [4 meaning of identifiers][30]
 
-    * [basic types][...]
+    * [4.1 basic types][...]
 
-  * [conversions][...]
+    * [4.2 derived types][...]
 
-  * [expressions][...]
+    * [4.3 type qualifiers][...]
 
-  * [operators][...]
+  * [5 conversions][...]
 
-  * [declarations][...]
+  * [6 expressions][...]
 
-  * [operations][...]
+    * [6.1 operators][...]
 
-  * [scopes][...]
+  * [7 declarations][...]
 
-  * [grammar][3]
+  * [8 operations][...]
+
+  * [9 scope and linkage][...]
+
+  * [10 grammar][3]
 
 * [resources][2]
 
