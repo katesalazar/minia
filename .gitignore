@@ -1,2 +1,5 @@
 #   Vim stuff.
 *.swp
+
+#   Output docs.
+minia.html

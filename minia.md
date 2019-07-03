@@ -251,13 +251,12 @@ TODO
 The following words are reserved for the use as keywords, and may not be used
 otherwise, unless as a part of an extension, a comment, or an identifier::
 
-    an                       and                      application
-    args                     at                       awesome
-    bound                    carriage                 causes
-    chain                    command                  commands
-    by                       char                     character
-    com                      comment                  divided
-    division                 does                     ease
+    an              and             application     args
+    at              awesome         bound           carriage
+    causes          chain           command         commands
+    by              char            character       com
+    comment         divided         division        does
+    ease
     effects                  else                     end
     entry                    ext                      extension
     feed                     formula                  function
