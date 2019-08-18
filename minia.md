@@ -249,7 +249,7 @@ TODO
 #### keywords
 
 The following words are reserved for the use as keywords, and may not be used
-otherwise, unless as a part of an extension, a comment, or an identifier::
+otherwise, unless as a part of an extension, a comment, or an identifier:
 
     an              and             application     args
     at              awesome         bound           carriage
