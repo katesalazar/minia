@@ -466,7 +466,8 @@ _everything_. However, _everything_ has no meaning in Minia.
 
 `unknown` is quite different from `nothing`, as it is the not definitive,
 repairable, absence of known type, due to
-partial or full ignorance, or due to missing details for any other reason.
+partial or full ignorance of (theoretically) rectifiable detail or part or
+circumstance, or due to missing details for any other reason.
 `unknown` is a type of `something`ness, as the quality of `unknown` requires
 the existence of `something` for that to be `unknown`.
 
