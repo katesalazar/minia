@@ -456,6 +456,18 @@ TODO
 
 There are several fundamental types.
 
+`nothing` is the definitive, not repairable, absence of known type, due to the
+absence of a value itself.
+
+`something` is quite a different thing, as it implies a negation of `nothing`.
+It is obviously not _the_ negation of `nothing`ness, but one of several
+possibilities of negation of `nothing`ness, one of them could obviously be
+_everything_. However, _everything_ has no meaning in Minia.
+
+`unknown` is the not definitive, repairable, absence of known type, due to
+ignorance or somehow else missing details. `unknown` is a type of
+`nothing`ness.
+
 Strings are sequences of characters. Characters are strict (128 positions only)
 ASCII. The type is sometimes referred to as `string`.
 
