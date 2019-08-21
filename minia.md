@@ -465,11 +465,12 @@ possibilities of negation of `nothing`ness, one of them could obviously be
 _everything_. However, _everything_ has no meaning in Minia.
 
 `unknown` is the not definitive, repairable, absence of known type, due to
-ignorance or somehow else missing details. `unknown` is a type of
-`nothing`ness.
+partial or full ignorance, or due to missing details for any other reason.
+`unknown` is a type of `something`ness, as the quality of `unknown` requires
+the existence of `something` for that to be `unknown`.
 
-Strings are sequences of characters. Characters are strict (128 positions only)
-ASCII. The type is sometimes referred to as `string`.
+Strings are sequences of characters. Characters are strict (as in 128 positions
+only) ASCII. The type is mostly referred to as `string`.
 
 A boolean value can only be either `true` or `false`.
 
