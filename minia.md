@@ -456,18 +456,18 @@ TODO
 
 There are several fundamental types.
 
-`nothing` is the definitive, not repairable, absence of known type, due to the
+`nothing` is the definitive, unsalvageable, absence of known type, due to the
 absence of a value itself.
 
 `something` is quite a different thing, as it implies a negation of `nothing`.
-It is obviously not _the_ negation of `nothing`ness, but one of several
+It is not _the_ negation of `nothing`ness, but one of several
 possibilities of negation of `nothing`ness, one of them could obviously be
 _everything_. However, _everything_ has no meaning in Minia.
 
 `unknown` is quite different from `nothing`, as it is the not definitive,
 repairable, absence of known type, due to
 partial or full ignorance of (theoretically) rectifiable detail or part or
-circumstance, or due to missing _important_ information for any other reason.
+circumstance, or due to missing _important_ information caused by any other reason.
 `unknown` is a type of `something`ness, as the quality of `unknown` requires
 the existence of `something` for that to be `unknown`.
 
