@@ -728,45 +728,45 @@ conditions apply instead:
 [Back to top][28]
 
 
-[1]: http://github.com/katesalazar/minia/tree/master#features
+[1]: #$%THIS%$##features
 
-[2]: http://github.com/katesalazar/minia/tree/master#resources
+[2]: #$%THIS%$##resources
 
-[3]: http://github.com/katesalazar/minia/tree/master#grammar
+[3]: #$%THIS%$##grammar
 
-[4]: http://github.com/katesalazar/minia/tree/master#grammar-Yacc-format
+[4]: #$%THIS%$##grammar-Yacc-format
 
-[5]: http://github.com/katesalazar/minia/tree/master#reference
+[5]: #$%THIS%$##reference
 
-[6]: http://github.com/katesalazar/minia/tree/master#scanner-lex-format
+[6]: #$%THIS%$##scanner-lex-format
 
-[7]: http://github.com/katesalazar/minia/tree/master#implementations
+[7]: #$%THIS%$##implementations
 
-[8]: http://github.com/katesalazar/minia/tree/master#acknowledgments
+[8]: #$%THIS%$##acknowledgments
 
-[9]: http://github.com/katesalazar/minia/tree/master#copying
+[9]: #$%THIS%$##copying
 
 [10]: http://github.com/katesalazar/amara
 
-[11]: http://github.com/katesalazar/minia/tree/master/minia.grammar
+[11]: #$%THIS%$#/minia.grammar
 
-[12]: http://github.com/katesalazar/minia/tree/master#grammar-BNF
+[12]: #$%THIS%$##grammar-BNF
 
-[13]: http://github.com/katesalazar/minia/tree/master#rationale
+[13]: #$%THIS%$##rationale
 
-[14]: http://github.com/katesalazar/minia/tree/master#introduction
+[14]: #$%THIS%$##introduction
 
-[15]: http://github.com/katesalazar/minia/tree/master#lexical-conventions
+[15]: #$%THIS%$##lexical-conventions
 
-[16]: http://github.com/katesalazar/minia/tree/master#tokens
+[16]: #$%THIS%$##tokens
 
-[17]: http://github.com/katesalazar/minia/tree/master#comments
+[17]: #$%THIS%$##comments
 
-[18]: http://github.com/katesalazar/minia/tree/master#identifiers
+[18]: #$%THIS%$##identifiers
 
-[19]: http://github.com/katesalazar/minia/tree/master#literals
+[19]: #$%THIS%$##literals
 
-[20]: http://github.com/katesalazar/minia/tree/master#string-literals
+[20]: #$%THIS%$##string-literals
 
 [21]: http://www.rust-lang.org/
 
@@ -776,17 +776,17 @@ conditions apply instead:
 
 [24]: http://www.ruby-lang.org/en/
 
-[25]: http://github.com/katesalazar/minia/tree/master#number-literals
+[25]: #$%THIS%$##number-literals
 
-[26]: http://github.com/katesalazar/minia/tree/master#natural-literals
+[26]: #$%THIS%$##natural-literals
 
-[27]: http://github.com/katesalazar/minia/tree/master#rational-literals
+[27]: #$%THIS%$##rational-literals
 
-[28]: http://github.com/katesalazar/minia/tree/master#table-of-contents
+[28]: #$%THIS%$##table-of-contents
 
-[29]: http://github.com/katesalazar/minia/tree/master#syntax-notation
+[29]: #$%THIS%$##syntax-notation
 
-[30]: http://github.com/katesalazar/minia/tree/master#meaning-of-identifiers
+[30]: #$%THIS%$##meaning-of-identifiers
 
 [31]: http://fsf.org
 
