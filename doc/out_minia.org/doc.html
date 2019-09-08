@@ -1,3 +1,728 @@
-<h1>mierda</h1>
+<h1>minia</h1>
 
-<p>mierda</p>
+<p>Minia programming language spec WIP.</p>
+
+<h2>table of contents</h2>
+
+<ul>
+<li><p><a href="#$%THIS%$##rationale">rationale</a></p></li>
+<li><p><a href="#$%THIS%$##features">features</a></p></li>
+<li><p><a href="#$%THIS%$##reference">reference</a></p>
+
+<ul>
+<li><p><a href="#$%THIS%$##introduction">1 introduction</a></p></li>
+<li><p><a href="#$%THIS%$##lexical-conventions">2 lexical conventions</a></p>
+
+<ul>
+<li><p><a href="#$%THIS%$##tokens">2.1 tokens</a></p></li>
+<li><p>[2.2 extensions][&hellip;]</p></li>
+<li><p><a href="#$%THIS%$##comments">2.3 comments</a></p></li>
+<li><p><a href="#$%THIS%$##identifiers">2.4 identifiers</a></p></li>
+<li><p>[2.5 keywords][&hellip;]</p></li>
+<li><p><a href="#$%THIS%$##literals">2.6 literals</a></p>
+
+<ul>
+<li><p><a href="#$%THIS%$##string-literals">2.6.1 string literals</a></p></li>
+<li><p>[2.6.2 boolean literals][&hellip;]</p></li>
+<li><p><a href="#$%THIS%$##number-literals">2.6.3 number literals</a></p>
+
+<ul>
+<li><p><a href="#$%THIS%$##natural-literals">2.6.3.1 natural literals</a></p></li>
+<li><p><a href="#$%THIS%$##rational-literals">2.6.3.2 rational literals</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a href="#$%THIS%$##syntax-notation">3 syntax notation</a></p></li>
+<li><p><a href="#$%THIS%$##meaning-of-identifiers">4 meaning of identifiers</a></p>
+
+<ul>
+<li><p>[4.1 basic types][&hellip;]</p></li>
+<li><p>[4.2 derived types][&hellip;]</p></li>
+<li><p>[4.3 type qualifiers][&hellip;]</p></li>
+</ul>
+</li>
+<li><p>[5 conversions][&hellip;]</p></li>
+<li><p>[6 expressions][&hellip;]</p>
+
+<ul>
+<li>[6.1 operators][&hellip;]</li>
+</ul>
+</li>
+<li><p>[7 declarations][&hellip;]</p></li>
+<li><p>[8 operations][&hellip;]</p></li>
+<li><p>[9 scope and linkage][&hellip;]</p></li>
+<li><p><a href="#$%THIS%$##grammar">10 grammar</a></p></li>
+</ul>
+</li>
+<li><p><a href="#$%THIS%$##resources">resources</a></p>
+
+<ul>
+<li><p><a href="#$%THIS%$##grammar-BNF">grammar (BNF)</a></p></li>
+<li><p><a href="#$%THIS%$##grammar-Yacc-format">grammar (Yacc format)</a></p></li>
+<li><p><a href="#$%THIS%$##scanner-lex-format">scanner (Lex format)</a></p></li>
+<li><p><a href="#$%THIS%$##implementations">implementations</a></p></li>
+</ul>
+</li>
+<li><p><a href="#$%THIS%$##acknowledgments">acknowledgements</a></p></li>
+<li><p><a href="#$%THIS%$##copying">copying</a></p></li>
+</ul>
+
+
+<h2>rationale</h2>
+
+<p>TODO</p>
+
+<h2>features</h2>
+
+<p>Some key features of the language:</p>
+
+<ul>
+<li><p>Named functions, named applications, and application execution requests.</p></li>
+<li><p>The strict ASCII set for both programming and texts.</p></li>
+<li><p><em>High readability</em> syntax.</p></li>
+<li><p><em>Unopinionated</em> syntax.</p>
+
+<ul>
+<li><p>Unopinionated string concatenation. Does not impose any string
+concatenation
+operator on you. <del>Encourages to use text syntax for string concatenation
+and
+lets you define an alias using an infix operator of your choice.</del> Provides
+only a verbose <code>concatenation</code> operator and considers glyphs as
+presentation
+accident.</p></li>
+<li><p>Unopinionated block syntax. The semicolon wars have no place here. This
+project considers both white space based blocks (e.g. <a href="http://www.python.org">Python</a>,
+<a href="http://www.ruby-lang.org/en/">Ruby</a>&hellip;), brace based blocks (e.g. <a href="http://www.open-std.org/jtc1/sc22/wg14/">C</a>, C++, C#, <a href="http://www.rust-lang.org/">Rust</a>&hellip;),
+and&hellip; maybe also parens based scopes (e.g. lisps, Scheme&hellip;) all three
+groups as presentation accident, so if a problem, then an irrelevant one,
+from the computer science point of view, because it is simply notation, so,
+again, if a problem, then belonging in the editors level, because, again,
+it is presentation accident.</p></li>
+<li><p>Unopinionated comment syntax. FIXME.</p></li>
+</ul>
+</li>
+<li><p>Arithmetic expressions.</p>
+
+<ul>
+<li><p>Value semantics. Evaluation theoretically separable from execution.</p>
+
+<ul>
+<li>Automatic memoization has to be theoretically possible, and the guarantee
+of some degree of <strong>optional</strong> memoization should be available as might
+be very desirable for some user niches.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>The natural or &#8469; (<code>N</code>), integer or &#8484; (<code>Z</code>) and rational or
+&#8474; (<code>Q</code>) sets. Basic arithmetic on them: addition, substraction,
+multiplication, division, exponentiation.</p>
+
+<ul>
+<li><p><del>Absence</del> Abstraction of machine two&rsquo;s complement numbers architecture,
+machine floating point numbers, and whatever other Von Neumann
+architectures implications. The interpreter is to choose the underlying
+technique for resolving rational numbers, using floating or fixed point
+arithmetic, at will. Machine stuff, specially Von Neumann architectures
+implications, are implementation detail.</p>
+
+<ul>
+<li>The programmer might configure a scope in order to ban floating point
+arithmetic in it. It is a right of the programmer, to choose some given
+arithmetic precision, without being constrained by the available tools.
+There must always be some kind of quantitative constraint that the tool
+imposes on the programmer, but qualitative constraints on essential
+concepts (such as e.g. arithmetic repeatability, and predictability, and
+the absence of a need to achieve a consensus) are wrong and have no place
+here.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&ldquo;Non computational&rdquo; <em>operations</em>, mainly for causing side effects.</p></li>
+<li><p>Command line applications.</p>
+
+<ul>
+<li>Command line applications specialized side effects non computational
+operations.</li>
+</ul>
+</li>
+</ul>
+
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
+
+<h2>reference</h2>
+
+<p>This section is structured using as model the appendix of the same name in &ldquo;The
+C Programming Language&rdquo; (K&amp;R).</p>
+
+<h3>1 introduction</h3>
+
+<p>This manual describes the Minia language. The manual is the proposal of a
+standard.</p>
+
+<h3>2 lexical conventions</h3>
+
+<p>A program consists of exactly one document, consisting of source code.
+It is translated in several phases, which are described in FIXME BROKEN REFERENCE.</p>
+
+<p>TODO</p>
+
+<p>Non-ASCII characters are not allowed in programs written in minia language.</p>
+
+<p>As a general rule, ASCII punctuation is not used in programs written in minia
+language, but they should be allowed and treated with no meaning, like
+(generally) whitespace.</p>
+
+<p>TODO maybe, probably, forbid ASCII punctuation.</p>
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
+
+<h4>2.1 tokens</h4>
+
+<p>There are four classes of tokens: identifiers, keywords, literals, and other
+separators. Blanks, horizontal and vertical tabs, newlines, formfeeds, comments
+and extensions as described below (collectively, ``white space") are <em>mostly</em>
+ignored except as they separate tokens. Some white space might be required to
+separate otherwise adjacent identifiers, keywords, and literals. Some white
+space might have some degree of meaning, like the white space (excluding
+comments) in between the words (keywords?) <code>comment</code> and <code>ends</code> which together
+are used to close comments.</p>
+
+<p>TODO</p>
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
+
+<h4>2.2 extensions</h4>
+
+<p>Extensions are a provision enabling:</p>
+
+<ul>
+<li><p>Compiler or interpreter quirks.</p></li>
+<li><p>Nonstandard (beyond standard behavior).</p>
+
+<ul>
+<li>Future evolution of the language.</li>
+</ul>
+</li>
+</ul>
+
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
+
+<h4>comments</h4>
+
+<p>The word (keyword?) <code>comment</code> (using any capitalization) introduces a comment,
+which terminates with the words (keywords?) <code>comment ends</code> (using any
+capitalization, with any amount of white space (excluding comments themselves,
+and extensions) in between <code>comment</code> and <code>ends</code>. Comments do <strong>not</strong> nest, and
+they do not occur within a string literal.</p>
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
+
+<h4>extensions</h4>
+
+<p>The word (keyword?) <code>extension</code> (using any capitalization) introduces the
+ocurrence of the use of a non standard extension, which terminates with the
+words (keywords?) <code>extension ends</code> (using any capitalization, with any amount
+of white space (excluding extensions themselves, and comments) in between
+<code>extension</code> and <code>ends</code>. Extensions do not nest, and they do not occur within a
+string literal.</p>
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
+
+<h5>comments inside extensions</h5>
+
+<p>By the very definition of extensions, any syntax is allowed for commenting code
+inside extensions.</p>
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
+
+<h4>identifiers</h4>
+
+<p>TODO</p>
+
+<h4>keywords</h4>
+
+<p>The following words are reserved for the use as keywords, and may not be used
+otherwise, unless as a part of an extension, a comment, or an identifier:</p>
+
+<pre><code>an              and             application     args
+at              awesome         bound           carriage
+causes          chain           command         commands
+by              char            character       com
+comment         divided         division        does
+ease
+effects                  else                     end
+entry                    ext                      extension
+feed                     formula                  function
+greater                  id                       ident
+identifier               integer                  interface
+if                       is                       it
+less                     line                     minus
+natural                  new                      no
+nor                      nothing                  of
+operator                 point                    print
+rational                 read                     receives
+return                   returns                  run
+set                      side                     simple
+small                    so                       substraction
+times                    than                     that
+the                      then                     thread
+to                       type                     where
+with                     without
+</code></pre>
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
+
+<h4>literals</h4>
+
+<p>Literals can be of two types:</p>
+
+<ul>
+<li><p>String literals (LINK MISSING).</p></li>
+<li><p>Number literals (LINK MISSING).</p></li>
+</ul>
+
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
+
+<h5>string literals</h5>
+
+<p>String literals are sequences of strict ASCII (code points less than 128)
+characters, headed by <code>string</code> and trailed by <code>string ends</code>. They are trimmed.
+Strings headed or trailed by white space can not be represented with string
+literals, but only by <em>[objects][REFERENCE MISSING]</em> typed <code>string</code>.</p>
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
+
+<h5>2.6.2 boolean literals</h5>
+
+<p>Boolean literals can only be either <code>false</code> or <code>true</code>.</p>
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
+
+<h5>number literals</h5>
+
+<p>Number literals are of two types:</p>
+
+<ul>
+<li><p>natural number literals (MISSING LINK TO)</p></li>
+<li><p>rational number literals )MISING LINK TO) which are only positive rational
+number literals</p>
+
+<ul>
+<li><p>excluding zero, which can be represented as a natural number literal</p></li>
+<li><p>including any other natural number that can, of course, also be represented
+using natural number literals.</p></li>
+</ul>
+</li>
+</ul>
+
+
+<p>You might be missing the integer set. But integers can be constructed as
+expressions consisting of the unary operator minus followed by a natural
+number, be it literal or be it an expression. Like wise, a negative rational
+number can be constructed as an expression consisting of the unary operator
+minus followed by either a [positive] rational number expression or a
+[positive] rational number literal.</p>
+
+<p>In general there are no hard wired bounds in the language. But of course bounds
+will be imposed on you by the resource availability of the machine running the
+program.
+There will also be hard wired bounds; even the language does not hard wire
+bounds, it will demand you to impose hard wire bounds on the scopes of your
+program where arithmetic operations are happening, you will use the <code>width</code> and
+<code>precision</code> keywords for that.
+The <code>width</code> keyword acts on natural, integer, and rational numbers. The
+<code>precision</code> keyword acts on rational numbers.</p>
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
+
+<h6>natural literals</h6>
+
+<p>A natural literal is decimal (i.e. base-ten).</p>
+
+<p>The machine type, if any, of a natural literal; is implementation detail.</p>
+
+<p>A natural literal consists of either:</p>
+
+<ol>
+<li><p>A zero digit (0).</p></li>
+<li><p>A non zero digit (1-9) followed by <strong>any</strong> number of digits without
+restriction.</p></li>
+</ol>
+
+
+<p>A natural number is not necessarily semantically correct even lexically could
+be correct. If a <code>420</code> is required at any time when the <code>arithmetic width</code> of
+the scope is set to <code>1</code>, an error is required to happen.</p>
+
+<p>FIXME talk about the <code>width</code> keyword.</p>
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
+
+<h6>integers</h6>
+
+<p>An integer is represented by an expression (MISSING LINK TO EXPRESSIONS)
+consisting of the occurrence of a natural literal following the unary operator
+minus. For reasons of strictly elegance, zero should be preferrably used
+without the minus sign, as minus zero has to be automatically transformed in
+the natural zero.</p>
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
+
+<h6>rational literals</h6>
+
+<p>A rational literal is decimal (i.e. base-ten).</p>
+
+<p>The machine type, if any, of a rational literal; is implementation detail.</p>
+
+<p>A positive rational literal consists of an optional natural part, followed by a
+mandatory dot, followed by a decimal part which can not be a list of zeroed
+digits, followed by an optional part where an <code>e</code> or <code>E</code> is mandatory and then
+a minus sign is optional and lastly a natural exponent is required.</p>
+
+<p>The natural part, if any, consists of a zero (0) or a non zero digit (1-9)
+followed by any number of digits without restriction. The decimal part consists
+of any number of zeroed digits, followed by a non zero digit (1-9), followed by
+any number of digits without restriction. The exponent consists of a zero (0)
+or a non zero digit (1-9) followed by any number of digits without restriction.</p>
+
+<p>As written before, the natural part is optional. The decimal part is mandatory.
+The exponent is optional. The dot, separating the optional natural part (if
+any) from the mandatory decimal part, is mandatory. The <code>e</code> or <code>E</code>, separating
+the mandatory decimal part from the optional exponent part, is optional.</p>
+
+<p>As a consequence, there is no way to represent zero as a rational literal.
+That&rsquo;s alright, because zero is natural, and in the Minia language every
+natural number can be promoted to a positive rational number. Any other natural
+numbers can be expressed as a rational literal, e.g. <code>420</code> can be also
+expressed as <code>.420e3</code> or <code>.420E3</code>. The interpreter program,
+or, in some conditions, maybe the compiler,
+or, if applicable, the compiled program, should detect this and automatically
+transform such rational number into a natural number, <code>420</code>. You can consider
+such transformation as a particular case of a general principle in computing by
+which functions should take as broadest input as possible and return as
+thinnest output as possible. Like wise, such rational literals as <code>1234.567e0</code>
+or <code>1234.567E0</code> should be transformed into an ocurrence of the natural number
+one (<code>1</code>).</p>
+
+<p>A rational number literal can represent a lot of different rational numbers. If
+a <code>1234.567</code> is required at any time when the <code>arithmetic precision</code> of the
+scope is set to <code>5</code>, it should automatically be transformed into the rational
+number <code>1234.6</code>. If the <code>arithmetic precision</code> is set to <code>7</code> or larger, it has
+to remain the same (<code>1234.567</code>). If a <code>1234.567</code> was required in a scope where
+the <code>arithmetic precision</code> is set to <code>4</code> and the <code>arithmetic width</code> is set to
+<code>4</code> or larger, it should automatically be transformed into the rational number
+<code>1235.0</code>, and then into the natural number <code>1235</code>.</p>
+
+<p>FIXME talk about the <code>width</code> and <code>precision</code> keywords.</p>
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
+
+<h6>negative rational numbers</h6>
+
+<p>A negative rational number can not be represented using a literal, but rather
+as an expression (MISSING LINK TO EXPRESSIONS) consisting of the occurrence of
+a [positive] rational literal following the unary operator minus.</p>
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
+
+<h3>syntax notation</h3>
+
+<p>TODO</p>
+
+<h3>meaning of identifiers</h3>
+
+<p>Identifiers, or names, refer to a variety of things: functions; and objects. An
+object, sometimes called a variable, is a location in storage, and its
+interpretation depends on one main attribute: its <em>type</em>. The type determines
+the meaning of the values found in the identified object. A name also has a
+scope, which is the region of the program in which it is known, and a linkage,
+which determines whether the same name in another scope refers to the same
+object or function. Scope and linkage are discussed in REFERENCE IS MISSING
+HERE.</p>
+
+<p>TODO</p>
+
+<h4>basic types</h4>
+
+<p>There are several fundamental types.</p>
+
+<p><code>nothing</code> is the definitive, unsalvageable, absence of known type, due to the
+absence of a value itself.</p>
+
+<p><code>something</code> is quite a different thing, as it implies a negation of <code>nothing</code>.
+It is not <em>the</em> negation of <code>nothing</code>ness, but one of several
+possibilities of negation of <code>nothing</code>ness, one of them could obviously be
+<em>everything</em>. However, <em>everything</em> has no meaning in Minia.</p>
+
+<p><code>unknown</code> is quite different from <code>nothing</code>, as it is the not definitive,
+repairable, absence of known type, due to
+partial or full ignorance of (theoretically) rectifiable detail or part or
+circumstance, or due to missing <em>important</em> information caused by any other reason.
+<code>unknown</code> is a type of <code>something</code>ness, as the quality of <code>unknown</code> requires
+the existence of <code>something</code> for that to be <code>unknown</code>.</p>
+
+<p>Strings are sequences of characters. Characters are strict (as in 128 positions
+only) ASCII. The type is mostly referred to as <code>string</code>.</p>
+
+<p>A boolean value can only be either <code>true</code> or <code>false</code>.</p>
+
+<p>Natural numbers belong to the <code>natural</code> set.</p>
+
+<p>Integer numbers belong to the <code>integer</code> set.</p>
+
+<p>Rational numbers belong to the <code>rational</code> set.</p>
+
+<p>The <code>nothing</code> type specifies an empty set of values. It might be used as the
+type where no value is applicable.</p>
+
+<p>TODO</p>
+
+<h4>derived types</h4>
+
+<p>Beside the basic types, there is a conceptually infinite class of derived types
+constructed from the fundamental types in the following ways: <em>lists</em> of
+objects of given types; <em>functions</em> receiving objects of given types and
+returning objects of given types; and <em>dictionaries</em> containing a sequence of
+objects of various types.</p>
+
+<p>In general these methods of constructing objects can be applied recursively.</p>
+
+<h4>type qualifiers</h4>
+
+<p>An object&rsquo;s type may have additional qualifiers. Declaring an object <code>constant</code>
+announces that its value will not be changed. This doesn&rsquo;t affect the range of
+values or arithmetic properties of the object. Qualifiers are discussed in
+REFERENCE MISSING.</p>
+
+<h3>conversions</h3>
+
+<p>Some operators may, depending on their operands, cause conversion of the value
+of an operand from one type to another. This section explains the result to be
+expected from such conversions. REFERENCE MISSING summarizes the conversions
+demanded by most ordinary operators; it will be supplemented as required by the
+discussion of each operator.</p>
+
+<h4>integral conversions</h4>
+
+<p>Values from the <code>natural</code> type can be promoted to the <code>integer</code> type. The value
+must remain unchanged.</p>
+
+<h4>rational conversions</h4>
+
+<p>Values from the <code>natural</code> and <code>integer</code> types can be promoted to the <code>rational</code>
+type. The value must remain unchanged.</p>
+
+<h3>expressions</h3>
+
+<p>The precedence of expression operators is the same as the order of the major
+subsections of this section, highest precedence first.</p>
+
+<p>TODO</p>
+
+<h4>operators</h4>
+
+<p>TODO</p>
+
+<h3>declarations</h3>
+
+<p>TODO</p>
+
+<h3>operations</h3>
+
+<p>TODO</p>
+
+<h3>scopes</h3>
+
+<p>TODO</p>
+
+<h3>grammar</h3>
+
+<p>TODO</p>
+
+<h2>resources</h2>
+
+<p>TODO</p>
+
+<h3>grammar (BNF)</h3>
+
+<p><code>&lt;TAB&gt;</code> represents a horizontal tabulation, <code>&lt;EOL&gt;</code> represents the end of the
+line (carriage return and / or line feed), <code>&lt;NOTHING&gt;</code> represents nothing, or
+the ambsence of any character, or the empty string.</p>
+
+<p>This is WIP.</p>
+
+<p>```</p>
+
+<p>&hellip;</p>
+
+<p><application> ::= &ldquo;application&rdquo;</p>
+
+<p>&hellip;</p>
+
+<p><greater> ::= &ldquo;greater&rdquo;</p>
+
+<p>&hellip;</p>
+
+<p><is> ::= &ldquo;is&rdquo;</p>
+
+<p>&hellip;</p>
+
+<p><less> ::= &ldquo;less&rdquo;</p>
+
+<p>&hellip;</p>
+
+<p><than> ::= &ldquo;than&rdquo;</p>
+
+<p>&hellip;</p>
+
+<p><letter> ::= &ldquo;a&rdquo; | &ldquo;b&rdquo; | &ldquo;c&rdquo; | &ldquo;d&rdquo; | &ldquo;e&rdquo; | &ldquo;f&rdquo; | g | h | i | j | k | l | m |n | o | p | q | r | s|t|u|v|w|x|y|z</p>
+
+<p><digit> ::= &hellip;</p>
+
+<p><underscore> ::= &ldquo;_&rdquo;</p>
+
+<p>&lt;identifier_inner> ::= <letter> &lt;identifier_inner>
+                     | <digit> &lt;identifier_inner>
+                     | <underscore> &lt;identifier_inner></p>
+
+<p><identifier> ::= <letter> &lt;identifier_inner></p>
+
+<p><ws> ::= &ldquo; &rdquo; | <TAB> | <EOL></p>
+
+<p>&hellip;</p>
+
+<p><document> ::= &lt;named_functions_and_applications_and_execution_requests></p>
+
+<p>&lt;named_functions_and_applications_and_execution_requests> ::= &lt;named_function>    &lt;named_functions_and_applications_and_execution_requests>
+                                                            | &lt;application_nt>    &lt;named_functions_and_applications_and_execution_requests>
+                                                            | &lt;execution_request> &lt;named_functions_and_applications_and_execution_requests>
+                                                            | <NOTHING></p>
+
+<p>&lt;application_nt> ::= &lt;cli_application></p>
+
+<p>&lt;cli_application> ::= <application> <identifier> <is> <a> <command> <line>
+                      <interface> <application> <and> <the> <entry> <point>
+                      <is> <function> <identifier> <end> <application>
+                      <identifier></p>
+
+<p>&lt;named_function> ::= &lt;cli_named_function></p>
+
+<p>&hellip;</p>
+
+<p>&hellip;</p>
+
+<p>&hellip;</p>
+
+<p><expression> ::= &lt;string_literal>
+               | <type> <of> <expression>
+               | <identifier>
+               | <expression> <times> <expression>
+               | <expression> <divided> <by> <expression>
+               | &lt;natural_literal>
+               | &lt;integer_literal>
+               | &lt;rational_literal></p>
+
+<p><condition> ::= <expression> <is> <less> <than> <expression>
+              | <expression> <is> <greater> <than> <expression></p>
+
+<p>```</p>
+
+<p>TODO</p>
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
+
+<h3>grammar (Yacc format)</h3>
+
+<p><a href="#$%THIS%$#/minia.grammar">WIP</a></p>
+
+<h3>scanner (Lex format)</h3>
+
+<p>TODO</p>
+
+<h3>implementations</h3>
+
+<p>The <a href="http://github.com/katesalazar/amara">amara project</a> (early WIP).</p>
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
+
+<h2>acknowledgements</h2>
+
+<p>&lt;Insert acknowledgements here&gt;</p>
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
+
+<h2>copying</h2>
+
+<p><strong>This and the rest of documents in this repository are in the public domain</strong>.</p>
+
+<p>In jurisdictions where this is not allowed, the following copyright terms and
+conditions apply instead:</p>
+
+<blockquote><p>Copyright &copy; 2018-2019 the minia language authors and contributors.</p>
+
+<ul>
+<li><p>Authored by:</p>
+
+<ul>
+<li><p>2019 &lt;your name here&gt;</p>
+
+<ul>
+<li>&lt;your work here&gt;</li>
+</ul>
+</li>
+<li><p>2018-2019 Mercedes Catherine Salazar (katesalazar):</p>
+
+<ul>
+<li>(2018-2019) Lexicon, syntax, semantics.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Contributions by:</p>
+
+<ul>
+<li><p>2019 &lt;your name here&gt;</p>
+
+<ul>
+<li>&lt;your work here&gt;</li>
+</ul>
+</li>
+<li><p>2018-2019 Mia (spreadLink):</p>
+
+<ul>
+<li><p>(2018-2019) Syntax advisory.</p></li>
+<li><p>(2018) Sequential operations conjunction: lexicon (<code>OPERATION and then
+OPERATION</code>).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<p>Licensed to you under the terms of a free software license (as in <a href="http://www.gnu.org/licenses/license-list.html">compatible
+with either the GNU GPL or the GNU FDL</a> as per the <a href="http://fsf.org">FSF</a>, where each
+applies), <strong>details TBD</strong>.</p>
+
+<p>[Clarifying on the previous paragraph, ] if your circumstances or worries
+make so this degree and abstraction and vagueness of freedoms still doesn&rsquo;t
+fit you, then we require you to:</p>
+
+<ul>
+<li><p>Raise us your case.</p></li>
+<li><p>In the interim consider this under either the latest version of the
+<a href="http://www.gnu.org/licenses/gpl.html">GNU GPL</a> or the latest version of the
+<a href="http://www.gnu.org/licenses/fdl.html">GNU FDL</a>, where each applies.</p></li>
+</ul>
+</blockquote>
+
+<p><a href="#$%THIS%$##table-of-contents">Back to top</a></p>
